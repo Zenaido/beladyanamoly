@@ -21,6 +21,7 @@ public:
   void simulate();
   static void checkForAnamoly();
 
+  bool checkVector();
   static void printSequences();
   void printInQueue() {
     for (size_t i = 0; i < inQueue.size(); i++) {

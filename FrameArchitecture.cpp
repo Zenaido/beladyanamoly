@@ -5,7 +5,12 @@
 #include <stdlib.h>
 #include <time.h>
 #include <vector>
-
+bool FrameArchitecture::generated = false;
+std::vector<std::vector<int>> FrameArchitecture::sequences =
+    std::vector<std::vector<int>>(101, std::vector<int>(1000));
+std::vector<std::vector<int>> FrameArchitecture::results =
+    std::vector<std::vector<int>>(101, std::vector<int>(101, 0));
+int FrameArchitecture::anamolies = 0;
 void FrameArchitecture::generateSequences() {
   for (auto &row : sequences) {
     std::generate(row.begin(), row.end(), []() { return (std::rand() % 250); });
@@ -30,8 +35,7 @@ void FrameArchitecture::printSequences() {
 };
 void FrameArchitecture::checkForAnamoly() {
   int min = 10000;
-  int frame;
-  int sequence;
+  int frame, sequence;
   size_t i, j = 0;
   std::cout << "Length of memory reference string: " << sequences[0].size()
             << std::endl;
@@ -60,13 +64,12 @@ void FrameArchitecture::checkForAnamoly() {
       } else {
         anamolies++;
 
-        std::cout << "Anamoly Discovered! " << std::endl;
-        std::cout << "\t Sequence: " << sequence << " " << std::endl;
-        std::cout << "\t Page Faults: " << results[frame][i]
-                  << " @ Frame size: " << frame << std::endl;
-
-        std::cout << "\t Page Faults: " << results[j][i]
-                  << " @ Frame size: " << j << std::endl;
+        std::cout << "Anamoly Discovered! " << std::endl
+                  << "\t Sequence: " << sequence << " " << std::endl
+                  << "\t Page Faults: " << results[frame][i]
+                  << " @ Frame Size: " << frame << std::endl
+                  << "\t Page Faults: " << results[j][i]
+                  << " @ Frame Size: " << j << std::endl;
       }
     }
     min = 10000;
@@ -76,11 +79,6 @@ void FrameArchitecture::checkForAnamoly() {
             << "Anamoly detected " << anamolies << " times." << std::endl;
 };
 
-bool FrameArchitecture::generated = false;
-std::vector<std::vector<int>> FrameArchitecture::sequences =
-    std::vector<std::vector<int>>(101, std::vector<int>(1000));
-std::vector<std::vector<int>> FrameArchitecture::results =
-    std::vector<std::vector<int>>(101, std::vector<int>(101, 0));
 void FrameArchitecture::simulate() {
   pageFaults = 0;
   for (int i = 1; i < sequences.size(); i++) {
@@ -97,7 +95,6 @@ void FrameArchitecture::simulate() {
           inQueue[sequences[i][j]] = true;
           pageFaults++;
         }
-        //    std::cout << pageFaults;
       }
     }
     results[frames][i] = pageFaults;
@@ -108,14 +105,12 @@ void FrameArchitecture::simulate() {
     }
   }
 };
-int FrameArchitecture::anamolies = 0;
 
 FrameArchitecture::FrameArchitecture(int frameSize) {
 
   frames = frameSize;
   if (!generated) {
     generated = true;
-    //  std::cout <<"Generated sequences";
     generateSequences();
   }
 };
