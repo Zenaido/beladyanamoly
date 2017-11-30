@@ -7,9 +7,9 @@ class FrameArchitecture {
 private:
   static std::vector<std::vector<int>> results;
   static std::vector<std::vector<int>> sequences;
-  std::vector<bool> inQueue = std::vector<bool>(250, false);
   static bool generated;
   static int anamolies;
+  std::vector<bool> inQueue = std::vector<bool>(250, false);
   int frames;
   int pageFaults = 0;
   std::queue<int> pages;

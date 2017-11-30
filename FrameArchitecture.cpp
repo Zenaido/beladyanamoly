@@ -7,9 +7,9 @@
 #include <vector>
 bool FrameArchitecture::generated = false;
 std::vector<std::vector<int>> FrameArchitecture::sequences =
-    std::vector<std::vector<int>>(101, std::vector<int>(1000));
+    std::vector<std::vector<int>>(100, std::vector<int>(1000));
 std::vector<std::vector<int>> FrameArchitecture::results =
-    std::vector<std::vector<int>>(101, std::vector<int>(101, 0));
+    std::vector<std::vector<int>>(100, std::vector<int>(100, 0));
 int FrameArchitecture::anamolies = 0;
 void FrameArchitecture::generateSequences() {
   for (auto &sequence : sequences) {
@@ -40,11 +40,11 @@ void FrameArchitecture::checkForAnamoly() {
   size_t i, j = 0;
   std::cout << "Length of memory reference string: " << sequences[0].size()
             << std::endl;
-  std::cout << "Frames of physical memory: " << sequences.size() - 1
-            << std::endl
+  std::cout << "Frames of physical memory: " << sequences.size() << std::endl
             << std::endl;
-  for (i = 1; i < results.size(); i++) {
-    for (j = 2; j < results[i].size(); j++) {
+
+  for (i = 0; i < results.size(); i++) {
+    for (j = 0; j < results[i].size(); j++) {
       // if (results[j][i] > results[j - 1][i]) {
       //   anamolies++;
       //
@@ -68,7 +68,7 @@ void FrameArchitecture::checkForAnamoly() {
         std::cout << "Anamoly Discovered! " << std::endl
                   << "\t Sequence: " << sequence << " " << std::endl
                   << "\t Page Faults: " << results[frame][i]
-                  << " @ Frame Size: " << frame << std::endl
+                  << " @ Frame Size: " << frame + 1 << std::endl
                   << "\t Page Faults: " << results[j][i]
                   << " @ Frame Size: " << j << std::endl;
       }
@@ -80,10 +80,13 @@ void FrameArchitecture::checkForAnamoly() {
             << "Anamoly detected " << anamolies << " times." << std::endl;
 };
 
+/**
+ * Simulate the running a processor
+ */
 void FrameArchitecture::simulate() {
   pageFaults = 0;
-  for (int i = 1; i < sequences.size(); i++) {
-    for (int j = 0; j < 1000; j++) {
+  for (int i = 0; i < sequences.size(); i++) {
+    for (int j = 0; j < sequences[i].size(); j++) {
       if (!inQueue[sequences[i][j]]) {
         if (pages.size() < frames) {
           pages.push(sequences[i][j]);
@@ -98,7 +101,7 @@ void FrameArchitecture::simulate() {
         }
       }
     }
-    results[frames][i] = pageFaults;
+    results[frames - 1][i] = pageFaults;
     pageFaults = 0;
     for (int k = 0; k != pages.size();) {
       inQueue[pages.front()] = false;
@@ -106,7 +109,10 @@ void FrameArchitecture::simulate() {
     }
   }
 };
-
+/**
+ * Constructor
+ * @param frameSize FrameSize for the current architecture
+ */
 FrameArchitecture::FrameArchitecture(int frameSize) {
 
   frames = frameSize;
