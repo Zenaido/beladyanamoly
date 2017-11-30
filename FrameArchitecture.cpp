@@ -12,8 +12,9 @@ std::vector<std::vector<int>> FrameArchitecture::results =
     std::vector<std::vector<int>>(101, std::vector<int>(101, 0));
 int FrameArchitecture::anamolies = 0;
 void FrameArchitecture::generateSequences() {
-  for (auto &row : sequences) {
-    std::generate(row.begin(), row.end(), []() { return (std::rand() % 250); });
+  for (auto &sequence : sequences) {
+    std::generate(sequence.begin(), sequence.end(),
+                  []() { return (std::rand() % 250); });
   }
 };
 
@@ -26,8 +27,8 @@ void FrameArchitecture::printResults() {
   }
 };
 void FrameArchitecture::printSequences() {
-  for (auto &row : sequences) {
-    for (auto &i : row) {
+  for (auto &sequence : sequences) {
+    for (auto &i : sequence) {
       std::cout << i << ", ";
     }
     std::cout << std::endl;
