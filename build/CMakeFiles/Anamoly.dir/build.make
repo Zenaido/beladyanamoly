@@ -81,40 +81,40 @@ CMakeFiles/Anamoly.dir/main.cpp.o.provides: CMakeFiles/Anamoly.dir/main.cpp.o.re
 CMakeFiles/Anamoly.dir/main.cpp.o.provides.build: CMakeFiles/Anamoly.dir/main.cpp.o
 
 
-CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.o: CMakeFiles/Anamoly.dir/flags.make
-CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.o: ../FrameArchitecture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/luiszenaidohernandez/Desktop/Coding/CS 3100/Assign6/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.o -c "/Users/luiszenaidohernandez/Desktop/Coding/CS 3100/Assign6/FrameArchitecture.cpp"
+CMakeFiles/Anamoly.dir/Memory.cpp.o: CMakeFiles/Anamoly.dir/flags.make
+CMakeFiles/Anamoly.dir/Memory.cpp.o: ../Memory.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/luiszenaidohernandez/Desktop/Coding/CS 3100/Assign6/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Anamoly.dir/Memory.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Anamoly.dir/Memory.cpp.o -c "/Users/luiszenaidohernandez/Desktop/Coding/CS 3100/Assign6/Memory.cpp"
 
-CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/luiszenaidohernandez/Desktop/Coding/CS 3100/Assign6/FrameArchitecture.cpp" > CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.i
+CMakeFiles/Anamoly.dir/Memory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Anamoly.dir/Memory.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/luiszenaidohernandez/Desktop/Coding/CS 3100/Assign6/Memory.cpp" > CMakeFiles/Anamoly.dir/Memory.cpp.i
 
-CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/luiszenaidohernandez/Desktop/Coding/CS 3100/Assign6/FrameArchitecture.cpp" -o CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.s
+CMakeFiles/Anamoly.dir/Memory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Anamoly.dir/Memory.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/luiszenaidohernandez/Desktop/Coding/CS 3100/Assign6/Memory.cpp" -o CMakeFiles/Anamoly.dir/Memory.cpp.s
 
-CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.o.requires:
+CMakeFiles/Anamoly.dir/Memory.cpp.o.requires:
 
-.PHONY : CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.o.requires
+.PHONY : CMakeFiles/Anamoly.dir/Memory.cpp.o.requires
 
-CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.o.provides: CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.o.requires
-	$(MAKE) -f CMakeFiles/Anamoly.dir/build.make CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.o.provides.build
-.PHONY : CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.o.provides
+CMakeFiles/Anamoly.dir/Memory.cpp.o.provides: CMakeFiles/Anamoly.dir/Memory.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Anamoly.dir/build.make CMakeFiles/Anamoly.dir/Memory.cpp.o.provides.build
+.PHONY : CMakeFiles/Anamoly.dir/Memory.cpp.o.provides
 
-CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.o.provides.build: CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.o
+CMakeFiles/Anamoly.dir/Memory.cpp.o.provides.build: CMakeFiles/Anamoly.dir/Memory.cpp.o
 
 
 # Object files for target Anamoly
 Anamoly_OBJECTS = \
 "CMakeFiles/Anamoly.dir/main.cpp.o" \
-"CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.o"
+"CMakeFiles/Anamoly.dir/Memory.cpp.o"
 
 # External object files for target Anamoly
 Anamoly_EXTERNAL_OBJECTS =
 
 Anamoly: CMakeFiles/Anamoly.dir/main.cpp.o
-Anamoly: CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.o
+Anamoly: CMakeFiles/Anamoly.dir/Memory.cpp.o
 Anamoly: CMakeFiles/Anamoly.dir/build.make
 Anamoly: CMakeFiles/Anamoly.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/luiszenaidohernandez/Desktop/Coding/CS 3100/Assign6/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Anamoly"
@@ -126,7 +126,7 @@ CMakeFiles/Anamoly.dir/build: Anamoly
 .PHONY : CMakeFiles/Anamoly.dir/build
 
 CMakeFiles/Anamoly.dir/requires: CMakeFiles/Anamoly.dir/main.cpp.o.requires
-CMakeFiles/Anamoly.dir/requires: CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.o.requires
+CMakeFiles/Anamoly.dir/requires: CMakeFiles/Anamoly.dir/Memory.cpp.o.requires
 
 .PHONY : CMakeFiles/Anamoly.dir/requires
 

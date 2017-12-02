@@ -1,4 +1,4 @@
-#include "FrameArchitecture.hpp"
+#include "Memory.hpp"
 #include <algorithm>
 #include <iostream>
 #include <queue>
@@ -7,11 +7,11 @@
 int main(int argc, char const *argv[]) {
 
   for (size_t i = 1; i < 101; i++) {
-    FrameArchitecture s = FrameArchitecture(i);
+    Memory s = Memory(i);
     s.simulate();
   }
 
-  FrameArchitecture::checkForAnamoly();
+  Memory::checkForAnamoly();
 
   return 0;
 };

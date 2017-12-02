@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/luiszenaidohernandez/Desktop/Coding/CS 3100/Assign6/FrameArchitecture.cpp" "/Users/luiszenaidohernandez/Desktop/Coding/CS 3100/Assign6/build/CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.o"
+  "/Users/luiszenaidohernandez/Desktop/Coding/CS 3100/Assign6/Memory.cpp" "/Users/luiszenaidohernandez/Desktop/Coding/CS 3100/Assign6/build/CMakeFiles/Anamoly.dir/Memory.cpp.o"
   "/Users/luiszenaidohernandez/Desktop/Coding/CS 3100/Assign6/main.cpp" "/Users/luiszenaidohernandez/Desktop/Coding/CS 3100/Assign6/build/CMakeFiles/Anamoly.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")

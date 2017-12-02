@@ -1,24 +1,22 @@
-#include "FrameArchitecture.hpp"
+#include "Memory.hpp"
 #include <algorithm>
 #include <iostream>
 #include <queue>
-#include <stdlib.h>
-#include <time.h>
 #include <vector>
-bool FrameArchitecture::generated = false;
-std::vector<std::vector<int>> FrameArchitecture::sequences =
+bool Memory::generated = false;
+std::vector<std::vector<int>> Memory::sequences =
     std::vector<std::vector<int>>(100, std::vector<int>(1000));
-std::vector<std::vector<int>> FrameArchitecture::results =
+std::vector<std::vector<int>> Memory::results =
     std::vector<std::vector<int>>(100, std::vector<int>(100, 0));
-int FrameArchitecture::anamolies = 0;
-void FrameArchitecture::generateSequences() {
+int Memory::anamolies = 0;
+void Memory::generateSequences() {
   for (auto &sequence : sequences) {
     std::generate(sequence.begin(), sequence.end(),
                   []() { return (std::rand() % 250); });
   }
 };
 
-void FrameArchitecture::printResults() {
+void Memory::printResults() {
   for (size_t i = 0; i < results.size(); i++) {
     for (size_t k = 0; k < results[i].size(); k++) {
       std::cout << results[i][k] << ",";
@@ -26,7 +24,10 @@ void FrameArchitecture::printResults() {
     std::cout << std::endl;
   }
 };
-void FrameArchitecture::printSequences() {
+/**
+ * print sequences in memory that have been generated
+ */
+void Memory::printSequences() {
   for (auto &sequence : sequences) {
     for (auto &i : sequence) {
       std::cout << i << ", ";
@@ -34,7 +35,11 @@ void FrameArchitecture::printSequences() {
     std::cout << std::endl;
   }
 };
-void FrameArchitecture::checkForAnamoly() {
+/**
+ * Count Anamolyies if simulate() hasn't been called will return 0 as
+ * no results have been calculated
+ */
+void Memory::checkForAnamoly() {
   int min = 10000;
   int frame, sequence;
   size_t i, j = 0;
@@ -45,18 +50,6 @@ void FrameArchitecture::checkForAnamoly() {
 
   for (i = 0; i < results.size(); i++) {
     for (j = 0; j < results[i].size(); j++) {
-      // if (results[j][i] > results[j - 1][i]) {
-      //   anamolies++;
-      //
-      //   std::cout << "Anamoly Discovered! " << std::endl;
-      //   std::cout << "\t Sequence: " << i << " " << std::endl;
-      //   std::cout << "\t Page Faults: " << results[j - 1][i]
-      //             << " Frame size: " << j - 1 << std::endl;
-      //
-      //   std::cout << "\t Page Faults: " << results[j][i] << " Frame size: "
-      //   << j
-      //             << std::endl;
-      // }
 
       if (results[j][i] <= min) {
         frame = j;
@@ -81,9 +74,9 @@ void FrameArchitecture::checkForAnamoly() {
 };
 
 /**
- * Simulate the running a processor
+ *  Simulate the running a processor
  */
-void FrameArchitecture::simulate() {
+void Memory::simulate() {
   pageFaults = 0;
   for (int i = 0; i < sequences.size(); i++) {
     for (int j = 0; j < sequences[i].size(); j++) {
@@ -111,9 +104,9 @@ void FrameArchitecture::simulate() {
 };
 /**
  * Constructor
- * @param frameSize FrameSize for the current architecture
+ * @param frameSize Frames for the current architecture
  */
-FrameArchitecture::FrameArchitecture(int frameSize) {
+Memory::Memory(int frameSize) {
 
   frames = frameSize;
   if (!generated) {

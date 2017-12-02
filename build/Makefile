@@ -123,32 +123,32 @@ Anamoly/fast:
 	$(MAKE) -f CMakeFiles/Anamoly.dir/build.make CMakeFiles/Anamoly.dir/build
 .PHONY : Anamoly/fast
 
-FrameArchitecture.o: FrameArchitecture.cpp.o
+Memory.o: Memory.cpp.o
 
-.PHONY : FrameArchitecture.o
+.PHONY : Memory.o
 
 # target to build an object file
-FrameArchitecture.cpp.o:
-	$(MAKE) -f CMakeFiles/Anamoly.dir/build.make CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.o
-.PHONY : FrameArchitecture.cpp.o
+Memory.cpp.o:
+	$(MAKE) -f CMakeFiles/Anamoly.dir/build.make CMakeFiles/Anamoly.dir/Memory.cpp.o
+.PHONY : Memory.cpp.o
 
-FrameArchitecture.i: FrameArchitecture.cpp.i
+Memory.i: Memory.cpp.i
 
-.PHONY : FrameArchitecture.i
+.PHONY : Memory.i
 
 # target to preprocess a source file
-FrameArchitecture.cpp.i:
-	$(MAKE) -f CMakeFiles/Anamoly.dir/build.make CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.i
-.PHONY : FrameArchitecture.cpp.i
+Memory.cpp.i:
+	$(MAKE) -f CMakeFiles/Anamoly.dir/build.make CMakeFiles/Anamoly.dir/Memory.cpp.i
+.PHONY : Memory.cpp.i
 
-FrameArchitecture.s: FrameArchitecture.cpp.s
+Memory.s: Memory.cpp.s
 
-.PHONY : FrameArchitecture.s
+.PHONY : Memory.s
 
 # target to generate assembly for a file
-FrameArchitecture.cpp.s:
-	$(MAKE) -f CMakeFiles/Anamoly.dir/build.make CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.s
-.PHONY : FrameArchitecture.cpp.s
+Memory.cpp.s:
+	$(MAKE) -f CMakeFiles/Anamoly.dir/build.make CMakeFiles/Anamoly.dir/Memory.cpp.s
+.PHONY : Memory.cpp.s
 
 main.o: main.cpp.o
 
@@ -186,9 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Anamoly"
-	@echo "... FrameArchitecture.o"
-	@echo "... FrameArchitecture.i"
-	@echo "... FrameArchitecture.s"
+	@echo "... Memory.o"
+	@echo "... Memory.i"
+	@echo "... Memory.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

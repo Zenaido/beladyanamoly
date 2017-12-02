@@ -9,6 +9,6 @@ elseif (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 endif()
 add_executable (Anamoly
   main.cpp
-  FrameArchitecture.cpp
-  FrameArchitecture.hpp
+  Memory.cpp
+  Memory.hpp
 )

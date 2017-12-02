@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Anamoly.dir/main.cpp.o"
-  "CMakeFiles/Anamoly.dir/FrameArchitecture.cpp.o"
+  "CMakeFiles/Anamoly.dir/Memory.cpp.o"
   "Anamoly.pdb"
   "Anamoly"
 )
