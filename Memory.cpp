@@ -14,7 +14,7 @@ void Memory::generateSequences() {
     std::generate(sequence.begin(), sequence.end(),
                   []() { return (std::rand() % 250); });
   }
-};
+}
 
 void Memory::printResults() {
   for (size_t i = 0; i < results.size(); i++) {
@@ -23,10 +23,8 @@ void Memory::printResults() {
     }
     std::cout << std::endl;
   }
-};
-/**
- * print sequences in memory that have been generated
- */
+}
+
 void Memory::printSequences() {
   for (auto &sequence : sequences) {
     for (auto &i : sequence) {
@@ -34,11 +32,8 @@ void Memory::printSequences() {
     }
     std::cout << std::endl;
   }
-};
-/**
- * Count Anamolyies if simulate() hasn't been called will return 0 as
- * no results have been calculated
- */
+}
+
 void Memory::checkForAnamoly() {
   int min = 10000;
   int frame, sequence;
@@ -52,7 +47,7 @@ void Memory::checkForAnamoly() {
     for (j = 0; j < results[i].size(); j++) {
 
       if (results[j][i] <= min) {
-        frame = j;
+        frame = j + 1;
         sequence = i;
         min = results[j][i];
       } else {
@@ -61,9 +56,9 @@ void Memory::checkForAnamoly() {
         std::cout << "Anamoly Discovered! " << std::endl
                   << "\t Sequence: " << sequence << " " << std::endl
                   << "\t Page Faults: " << results[frame][i]
-                  << " @ Frame Size: " << frame + 1 << std::endl
+                  << " @ Frame Size: " << frame << std::endl
                   << "\t Page Faults: " << results[j][i]
-                  << " @ Frame Size: " << j << std::endl;
+                  << " @ Frame Size: " << j + 1 << std::endl;
       }
     }
     min = 10000;
@@ -71,11 +66,8 @@ void Memory::checkForAnamoly() {
   std::cout << std::endl
             << std::endl
             << "Anamoly detected " << anamolies << " times." << std::endl;
-};
+}
 
-/**
- *  Simulate the running a processor
- */
 void Memory::simulate() {
   pageFaults = 0;
   for (int i = 0; i < sequences.size(); i++) {
@@ -101,11 +93,8 @@ void Memory::simulate() {
       pages.pop();
     }
   }
-};
-/**
- * Constructor
- * @param frameSize Frames for the current architecture
- */
+}
+
 Memory::Memory(int frameSize) {
 
   frames = frameSize;
@@ -113,4 +102,4 @@ Memory::Memory(int frameSize) {
     generated = true;
     generateSequences();
   }
-};
+}
