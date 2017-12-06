@@ -47,7 +47,7 @@ void Memory::checkForAnamoly() {
     for (j = 0; j < results[i].size(); j++) {
 
       if (results[j][i] <= min) {
-        frame = j + 1;
+        frame = j;
         sequence = i;
         min = results[j][i];
       } else {
@@ -56,7 +56,7 @@ void Memory::checkForAnamoly() {
         std::cout << "Anamoly Discovered! " << std::endl
                   << "\t Sequence: " << sequence << " " << std::endl
                   << "\t Page Faults: " << results[frame][i]
-                  << " @ Frame Size: " << frame << std::endl
+                  << " @ Frame Size: " << frame + 1 << std::endl
                   << "\t Page Faults: " << results[j][i]
                   << " @ Frame Size: " << j + 1 << std::endl;
       }
